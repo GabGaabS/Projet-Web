@@ -43,6 +43,13 @@ session_start();
                     ?>
                 </li>
                 <li>
+                    <?php
+                    if ($_SESSION['role_id'] == 0){
+                        echo '<a href="admin.php">Panel admin</a>';
+                    } 
+                     ?>
+                </li>
+                <li>
                     <a href="logout.php">Se déconnecter</a>
                 </li>
             </ul>
