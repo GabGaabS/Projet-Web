@@ -16,15 +16,19 @@ session_start();
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="listings.php">Gaby est trop sexy</a>
+            <a class="navbar-brand" href="listings.php">Omnes Marketplace</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
+<!-- Options dans la navbar -->
+<!-- accueil -->
                 <li>
-                    <a href="profile.php"><?php echo $_SESSION['first_name']?></a>
+                    <a href="listings.php">Accueil</a>
                 </li>
+
+<!--
                 <li>
                     <?php
                     if ($_SESSION['role_id'] == 2) {
@@ -42,6 +46,23 @@ session_start();
                     }
                     ?>
                 </li>
+                                    -->
+                <!--  Tout parcourir -->
+
+                <!-- Notif -->
+                <li>
+                    <a href="notif.php">Notification</a>
+                </li>
+
+                <!-- Panier -->
+                <li>
+                    <a href="panier.php">Panier</a>
+                </li>
+                <!-- Votre compte-->
+                <li>
+                    <a href="profile.php">Votre compte</a>
+                </li>
+                <!--Panel admin-->
                 <li>
                     <?php
                     if ($_SESSION['role_id'] == 0){
@@ -49,6 +70,7 @@ session_start();
                     } 
                      ?>
                 </li>
+                <!-- Se déco-->
                 <li>
                     <a href="logout.php">Se déconnecter</a>
                 </li>
