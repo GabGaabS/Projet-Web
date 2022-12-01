@@ -95,17 +95,7 @@ require_once('dbConnection.php');
                                     <div class="form-group">
                                         <input type="text" name="dob" id="dob" tabindex="5" class="form-control" placeholder="Date de naissance" value="">
                                     </div>
-                                    <div class="form-group">
-                                        <label for="filter">Type de compte</label>
-                                        <select class="form-control" id="role" name="role">
-                                            <?php $sql = 'SELECT * FROM Roles WHERE role_id="1" OR (role_id="2")';
-                                                    foreach ($db->query($sql) as $row) { ?>
-                                                <option value="<?php echo $row['role_id']; ?>">
-                                                    <?php echo htmlspecialchars($row['role']); ?>
-                                                </option>
-                                                <?php } ?>
-                                        </select>
-                                    </div>
+                                    
                                     <div class="form-group">
                                         <input type="password" name="password" id="password" tabindex="6" class="form-control" placeholder="Mot de passe">
                                     </div>

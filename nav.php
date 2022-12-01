@@ -27,15 +27,10 @@ session_start();
                 <li>
                     <a href="listings.php">Accueil</a>
                 </li>
-
-<!--
                 <li>
                     <?php
                     if ($_SESSION['role_id'] == 2) {
                         echo '<a href="bidsauctions.php">Vos ventes</a>';
-                    }
-                    else if ($_SESSION['role_id'] == 1) {
-                        echo '<a href="bidsauctions.php">Vos achats</a>';
                     }
                     ?>
                 </li>
@@ -46,6 +41,15 @@ session_start();
                     }
                     ?>
                 </li>
+
+<!--
+                
+                    else if ($_SESSION['role_id'] == 1) {
+                        echo '<a href="bidsauctions.php">Vos achats</a>';
+                    }
+                    ?>
+                </li>
+                
                                     -->
                 <!--  Tout parcourir -->
 
