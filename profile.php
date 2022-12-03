@@ -71,6 +71,9 @@ if (isset($_GET["user"]) && $user != $_SESSION['user_id']) {
 }
 ?>
 
+<div id="footer"></div>
 </body>
-
+<script> 
+$(function(){$("#footer").load("footer.html"); });
+</script> 
 </html>

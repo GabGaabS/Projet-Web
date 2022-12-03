@@ -363,6 +363,10 @@ include('nav.php');
 
 </div>
 </div>
+<div id="footer"></div>
 </body>
+<script> 
+$(function(){$("#footer").load("footer.html"); });
+</script> 
 
 </html>
