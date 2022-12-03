@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mar. 22 nov. 2022 à 13:11
+-- Généré le : sam. 03 déc. 2022 à 14:28
 -- Version du serveur : 8.0.27
 -- Version de PHP : 7.4.26
 
@@ -273,16 +273,16 @@ CREATE TABLE IF NOT EXISTS `users` (
   `role_id` int NOT NULL DEFAULT '0',
   PRIMARY KEY (`user_id`),
   KEY `Users_Roles` (`role_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3;
+) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb3;
 
 --
 -- Déchargement des données de la table `users`
 --
 
 INSERT INTO `users` (`user_id`, `username`, `passwd`, `profile_picture`, `first_name`, `last_name`, `email`, `birthdate`, `rating_count`, `rating`, `role_id`) VALUES
-(1, 'GabGabS', 'f7c3bc1d808e04732adf679965ccc34ca7ae3441', 'uploads/profile/031116-120348_image_bceabb1299.jpg', 'Gaby', 'Lst', 'gaby@ece.fr', '2001-12-02', 24, '4.96', 2),
-(2, 'Gabuyer', 'f7c3bc1d808e04732adf679965ccc34ca7ae3441', 'uploads/profile/stock.jpg', 'Gaby', 'lacheteur', 'Craby@ece.fe', '2001-12-02', 1, '3.00', 1),
-(3, 'admin', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 'uploads/profile/stock.jpg', 'Prenom', 'Nom', 'admin@ece.fr', '2001-12-02', 0, '0.00', 0);
+(1, 'GabGabS', '356a192b7913b04c54574d18c28d46e6395428ab', 'uploads/profile/031116-120348_image_bceabb1299.jpg', 'Gaby', 'Lst', 'gaby@ece.fr', '2001-12-02', 24, '4.96', 2),
+(2, 'Gabuyer', '356a192b7913b04c54574d18c28d46e6395428ab', 'uploads/profile/stock.jpg', 'Gaby', 'lacheteur', 'Craby@ece.fe', '2001-12-02', 1, '3.00', 1),
+(3, 'admin', '356a192b7913b04c54574d18c28d46e6395428ab', 'uploads/profile/stock.jpg', 'Prenom', 'Nom', 'admin@ece.fr', '2001-12-02', 0, '0.00', 0);
 
 -- --------------------------------------------------------
 
