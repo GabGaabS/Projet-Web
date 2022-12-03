@@ -195,7 +195,6 @@ else {
     <!-- Bootstrap Core JavaScript -->
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.js"integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="crossorigin="anonymous"></script>
     <script> $(function(){ $("#footer").load("footer.html"); });</script> 
 
 </head>
@@ -240,9 +239,7 @@ else {
 <div id="footer"></div>
 </body>
 <script> 
-$(function(){ 
-  $("#footer").load("footer.html"); 
-});
+$(function(){$("#footer").load("footer.html"); });
 </script> 
 
 </html>
