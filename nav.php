@@ -2,7 +2,7 @@
 require_once 'dbConnection.php';
 session_start();
 ?>
-
+<link rel="stylesheet" href="nav.css">
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container-fluid">
