@@ -113,7 +113,7 @@ include 'nav.php';
         </div>
         <!-- Item Category -->
         <div class="form-group">
-            <label class="col-md-4 control-label" for="item-category">Product Category</label>
+            <label class="col-md-4 control-label" for="item-category">Catégorie</label>
             <div class="col-md-4">
                 <select id="item-category" name="item-category" class="form-control" required>
                     <option selected disabled hidden>Please Select a Category</option>
@@ -135,7 +135,7 @@ include 'nav.php';
         </div>
         <!-- Item State -->
         <div class="form-group">
-            <label class="col-md-4 control-label" for="item-state">Product Condition</label>
+            <label class="col-md-4 control-label" for="item-state">Etat du produit</label>
             <div class="col-md-4">
                 <select id="item-state" name="item-state" class="form-control" required>
                     <option value="" selected disabled hidden>Please Select a Condition</option>
@@ -149,7 +149,7 @@ include 'nav.php';
         </div>
         <!-- Start Price -->
         <div class="form-group">
-            <label class="col-md-4 control-label" for="start-price">Start Price</label>
+            <label class="col-md-4 control-label" for="start-price">Prix</label>
             <div class="col-md-4">
                 <div class = "input-group">
                     <span class="input-group-addon">$</span>
@@ -159,7 +159,7 @@ include 'nav.php';
         </div>
         <!-- Reserve Price -->
         <div class="form-group">
-            <label class="col-md-4 control-label" for="reserve-price">Reserve Price</label>
+            <label class="col-md-4 control-label" for="reserve-price">Prix de réserve</label>
             <div class="col-md-4">
                 <div class = "input-group">
                     <span class="input-group-addon">$</span>
@@ -172,10 +172,10 @@ include 'nav.php';
         </div>
         <!-- Auction Duration -->
         <div class="form-group">
-            <label class="col-md-4 control-label" for="auction-duration">Auction Duration</label>
+            <label class="col-md-4 control-label" for="auction-duration">Durée</label>
             <div class="col-md-4">
                 <select id="auction-duration" name="auction-duration" class="form-control" required>
-                    <option value="" selected disabled hidden>Please Select the Auction Duration</option>
+                    <option value="" selected disabled hidden>Durée de l'enchère</option>
                     <?php
                     $sql = 'SELECT * FROM Duration';
                     foreach ($db->query($sql) as $row) { ?>
