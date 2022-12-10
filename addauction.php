@@ -90,7 +90,9 @@ if (isset($_POST['submit'])) {
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Bootstrap Core JavaScript -->
+    <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script> $(function(){ $("#footer").load("footer.html"); });</script> 
 
 </head>
 
@@ -201,6 +203,9 @@ include 'nav.php';
     </fieldset>
 </form>
 
+<div id="footer"></div>
 </body>
-
+<script> 
+$(function(){$("#footer").load("footer.html"); });
+</script> 
 </html>
