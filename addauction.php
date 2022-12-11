@@ -152,9 +152,9 @@ include 'nav.php';
         <!-- Type de vente -->
         <table>
       <tr>
-        <td>
+        <td><label>
         Type de vente :
-        </td>
+        </label></td>
         <td>
           <select onchange="catsel(this)">
           <!--<option value="-1">None</option>!-->

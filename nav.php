@@ -129,7 +129,7 @@ session_start();
     <section>
         <br>
         <center>
-        <p><font color=red size="20pt" face="impact" ><B>Bienvenue sur Omnes MarketPlace,<br> la plateforme de vente proposée par L'ECE</br></b></font> </p>
+        <p><font color=red size="10pt" face="impact" ></font> </p>
         </center>
         </br>
     </section>
