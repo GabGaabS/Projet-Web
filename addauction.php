@@ -150,6 +150,7 @@ include 'nav.php';
             </div>
         </div>
         <!-- Type de vente -->
+        <center>
         <table>
       <tr>
         <td><label>
@@ -291,6 +292,7 @@ include 'nav.php';
         </td>
       </tr>
     </table>
+    </center>
         
     </fieldset>
 </form>

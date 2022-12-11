@@ -20,7 +20,6 @@ session_start();
                             <span class="icon-bar"></span>
                         </button>
                         <a class="navbar-brand" href="listings.php">Omnes Marketplace</a>
-                        <img src="logo.jpg" height="50" width="70">
                     </div>
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
