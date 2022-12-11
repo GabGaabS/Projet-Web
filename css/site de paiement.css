@@ -1,0 +1,13 @@
+header {
+  height:400px;
+  background-image:url("C:\wamp64\www\web\uploads\item\banniere.jpg");
+  border:1px solid #CCC;
+  width:1000px;
+  margin:0px auto;
+  position: relative;
+}
+
+#header h1{
+  color:white;
+  text-align: center
+}
