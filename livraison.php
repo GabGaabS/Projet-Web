@@ -3,8 +3,8 @@
 if(isset($_POST['envoi'])){ // si formulaire soumis
  
 }
-if (isset($_POST['nom']) && isset($_POST['fonction'])) {
-       echo 'Votre nom est '.$_POST['nom'].' et votre fonction est '.$_POST['fonction'];
+if (isset($_POST['nom']) && isset($_POST['Prenom'])) {
+       echo 'Votre nom est '.$_POST['nom'].' et votre Prenom est '.$_POST['Prenom'];
 
 
 }

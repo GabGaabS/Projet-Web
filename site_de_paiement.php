@@ -1,38 +1,50 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
+
 <head>
-	<center>
 
-		<header>
-			<link rel="site de paiement" href="./css/site_de_paiement.css">
-		<div id="header">
-			<h1>Paiement</h1>
-		</div>
-	</header>
-
-	<br><br><br><br><br>
-	
-
-    <section>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Shop Homepage - Start Bootstrap Template</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <title>Paiement</title>
+    <link rel="site de paiement" href="./css/site_de_paiement.css">
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/shop-homepage.css" rel="stylesheet">
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script> $(function(){ $("#footer").load("footer.html"); });</script> 
+  <script src="https://www.paypal.com/sdk/js?client-id=test&currency=EUR"></script>
 </head>
 <body>
-	 <!-- Replace "test" with your own sandbox Business account app client ID -->
-  <script src="https://www.paypal.com/sdk/js?client-id=test&currency=EUR"></script>
-  <!-- Set up a container element for the button -->
-  <div id="paypal-button-container"></div>
-  <script>
-    paypal.Buttons({
-      // Sets up the transaction when a payment button is clicked
+    <?php
+include 'nav.php';
+?>
+     <div id="header">
+        <center>
+            <h1>Paiement</h1>
+        </center>
+        </div>
+    <br><br><br><br><br>
+    <section>
+<center>
+        <div id="paypal-button-container"></div>
+        <script>
+            paypal.Buttons({
+      
       createOrder: (data, actions) => {
         return actions.order.create({
           purchase_units: [{
             amount: {
-              value: '80.0' // Peut également référencer une variable ou une fonction
+              value: '80.00'
             }
           }]
         });
@@ -48,10 +60,10 @@
       }
     }).render('#paypal-button-container');
   </script>
-</body>
+</center>
 </section>
   <section>
-  	
+    
   <h2>adresse de livraison</h2>
   <form action="livraison.php" method="post">
               <style type="text/css">
@@ -124,25 +136,11 @@
 
        </table>
        </form>
-</body>
 </section>
 </center>
-<footer>
-	<center>
-		<h3>Restons en contact</h3>
-        <p class="Emplois"> <br>
-        	Email :  OmnesMarketPlace@edu.ece.fr
-            <br>
-            Adresse:
-            POLLUX
-            37, Quai de Grenelle
-            75015 Paris<br>
-            Tel : 01 44 39 06 00
-            </p>
-        </center>
-
-    </footer>
+<div id="footer"></div>
 </body>
-   
-</body>
+<script> 
+$(function(){$("#footer").load("footer.html"); });
+</script> 
 </html>

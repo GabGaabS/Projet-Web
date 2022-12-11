@@ -1,3 +1,6 @@
+<?php
+require("dbConnection.php");
+?>
 <!DOCTYPE html>
 <html>
 
@@ -30,118 +33,29 @@
     <div class="container">
     <h2 class="text-center">Ventes flash</h2>
     <div class="row">
-        <div class="col-md-3 col-sm-6">
             <div class="product-grid7">
-                <div class="product-image7">
-                    <a href="#">
-                        <img class="pic-1" src="img\ordinateurventeflash.jpg">
-                    </a>
-                    <ul class="social">
-                        <li><a href="" class="fa fa-search"></a></li>
-                        <li><a href="" class="fa fa-shopping-bag"></a></li>
-                        <li><a href="" class="fa fa-shopping-cart"></a></li>
-                    </ul>
-                    <span class="product-new-label">New</span>
-                </div>
-                <div class="product-content">
-                    <h3 class="title"><a href="#">Ordinateur Micorsoft 1To</a></h3>
-                    <ul class="rating">
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                    </ul>
-                    <div class="price">1500.00$
-                        <span>2000.00$</span>
-                    </div>
+                <?php
+                $sql = "SELECT A.current_bid, A.auction_id, I.item_picture, I.label, I.description, S.state 
+            FROM Auction A, Item I, State S ORDER BY RAND() LIMIT 4";
+                $stmt = $db -> prepare($sql);
+                $stmt -> execute();
+                $result = $stmt -> fetchAll();
+                ?>
+    <div class="col-md-12" style="padding-top:2px">
+        <?php
+        foreach ($result as $item) {
+             {?>
+        <div id="auction" class="col-md-3">
+            <div class="thumbnail">
+                <img src="<?php echo $item['item_picture']; ?>" alt="Item image" style="width:450px; height:250px">
+                <div class="caption">
+                    <h4 class="pull-right">$ <?php echo $item['current_bid']; ?></h4>
+                    <h4><a href="productpage.php?auct=<?php echo $item['auction_id']; ?>"><?php echo $item['label']; ?> (<?php echo $item['state']; ?>)</a></h4>
+                    <p><?php echo $item['description']; ?></p>
                 </div>
             </div>
         </div>
-        <div class="col-md-3 col-sm-6">
-            <div class="product-grid7">
-                <div class="product-image7">
-                    <a href="#">
-                        <img class="pic-1" src="img\mixeurventeflash.jpg">
-                    </a>
-                    <ul class="social">
-                        <li><a href="" class="fa fa-search"></a></li>
-                        <li><a href="" class="fa fa-shopping-bag"></a></li>
-                        <li><a href="" class="fa fa-shopping-cart"></a></li>
-                    </ul>
-                </div>
-                <div class="product-content">
-                    <h3 class="title"><a href="#">mixeur multifonction </a></h3>
-                    <ul class="rating">
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                    </ul>
-                    <div class="price">150.00$
-                        <span>200.00$</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-            <div class="product-grid7">
-                <div class="product-image7">
-                    <a href="#">
-                        <img class="pic-1" src="img\televenteflash.jpg">
-                    </a>
-                    <ul class="social">
-                        <li><a href="" class="fa fa-search"></a></li>
-                        <li><a href="" class="fa fa-shopping-bag"></a></li>
-                        <li><a href="" class="fa fa-shopping-cart"></a></li>
-                    </ul>
-                    <span class="product-new-label">New</span>
-                </div>
-                <div class="product-content">
-                    <h3 class="title"><a href="#">télévision LG 4K </a></h3>
-                    <ul class="rating">
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                    </ul>
-                    <div class="price">$2777
-                        <span>$3999.00</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-            <div class="product-grid7">
-                <div class="product-image7">
-                    <a href="#">
-                        <img class="pic-1" src="img\sacventeflash.jpg">
-                    </a>
-                    <ul class="social">
-                        <li><a href="" class="fa fa-search"></a></li>
-                        <li><a href="" class="fa fa-shopping-bag"></a></li>
-                        <li><a href="" class="fa fa-shopping-cart"></a></li>
-                    </ul>
-                    <span class="product-new-label">New</span>
-                </div>
-                <div class="product-content">
-                    <h3 class="title"><a href="#">Sac Louis Vitton</a></h3>
-                    <ul class="rating">
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                    </ul> 
-                    <div class="price">$1000.00
-                        <span>$1220.00</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+        <?php }} ?>
 </div>
 </div>
     <div></div>
@@ -154,7 +68,8 @@
             </div>
         </div>
         <center>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.35566398962!2d2.2864078148539444!3d48.85142790915226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6701b4f58251b%3A0x167f5a60fb94aa76!2sECE.%20Ecole%20d&#39;ing%C3%A9nieurs.%20Engineering%20school.!5e0!3m2!1sfr!2sfr!4v1670777969911!5m2!1sfr!2sfr" width="100%" height="450"allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" ></iframe>
+        <iframe allowfullscreen frameborder="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.35566398962!2d2.2864078148539444!3d48.85142790915226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6701b4f58251b%3A0x167f5a60fb94aa76!2sECE.%20Ecole%20d&#39;ing%C3%A9nieurs.%20Engineering%20school.!5e0!3m2!1sfr!2sfr!4v1670777969911!5m2!1sfr!2sfr" width="100%" height="450" referrerpolicy="no-referrer-when-downgrade" ></iframe>
+        
     </center>
     </div>
     <script

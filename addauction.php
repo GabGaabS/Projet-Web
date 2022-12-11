@@ -52,21 +52,18 @@ if (isset($_POST['submit'])) {
         $itemSTMT->execute();
         if (!$itemSTMT->rowCount()) {
             $db->rollBack();
-            //echo 'item stmt failed';
         } else {
             $auctionSTMT->execute();
             if (!$auctionSTMT->rowCount()) {
                 $db->rollBack();
-                //echo 'auction stmt failed';
             } else {
                 $db->commit();
-                //echo 'success db';
                 header('Location: listings.php');
             }
         }
     }
     else {
-        $errPrice = "Please ensure that reserve price is bigger than start price";
+        $errPrice = "Veuillez vous assurer que la réserve est plus haute que le prix";
     }
 }
 ?>
@@ -171,26 +168,26 @@ include 'nav.php';
             <table border="0" cellspacing="3" cellpadding="0"><tr><td>
         <!-- Start Price -->
         <div class="form-group">
-            <label class="col-md-4 control-label" for="start-price">Prix</label>
+            <label class="col-md-4 control-label" for="start-pricec">Prix</label>
             <div class="col-md-4">
                 <div class = "input-group">
                     <span class="input-group-addon">$</span>
-                    <input type="number" id="start-price" name="start-price" placeholder="Prix" class="form-control" required>
+                    <input type="number" id="start-pricec" name="start-pricec" placeholder="Prix" class="form-control" required>
                 </div>
             </div>
         </div>
         <!-- Item Image -->
         <div class="form-group">
-            <label class="col-md-4 control-label" for="item-image">Poster une image</label>
+            <label class="col-md-4 control-label" for="item-imagec">Poster une image</label>
             <div class="col-md-4">
-                <input id="item-image" name="item-image" class="input-file" type="file" required>
+                <input id="item-imagec" name="item-imagec" class="input-file" type="file" required>
             </div>
         </div>
         <!-- Submit Auction -->
         <div class="form-group">
-            <label class="col-md-4 control-label" for="submit"></label>
+            <label class="col-md-4 control-label" for="submitc"></label>
             <div class="col-md-4">
-                <button id="submit" name="submit" class="btn btn-primary" required>Vendre</button>
+                <button id="submitc" name="submitc" class="btn btn-primary" required>Vendre</button>
             </div>
         </div></td></tr></table>
           </div>
@@ -266,26 +263,26 @@ include 'nav.php';
             <table border="0" cellspacing="3" cellpadding="0"><tr><td><!-- Vente par négociation -->
         <!-- Start Price -->
         <div class="form-group">
-            <label class="col-md-4 control-label" for="start-price">Prix initial</label>
+            <label class="col-md-4 control-label" for="start-pricen">Prix initial</label>
             <div class="col-md-4">
                 <div class = "input-group">
                     <span class="input-group-addon">$</span>
-                    <input type="number" id="start-price" name="start-price" placeholder="Prix" class="form-control" required>
+                    <input type="number" id="start-pricen" name="start-pricen" placeholder="Prix" class="form-control" required>
                 </div>
             </div>
         </div>
         <!-- Item Image -->
         <div class="form-group">
-            <label class="col-md-4 control-label" for="item-image">Poster une image</label>
+            <label class="col-md-4 control-label" for="item-imagen">Poster une image</label>
             <div class="col-md-4">
-                <input id="item-image" name="item-image" class="input-file" type="file" required>
+                <input id="item-imagen" name="item-imagen" class="input-file" type="file" required>
             </div>
         </div>
         <!-- Submit Auction -->
         <div class="form-group">
-            <label class="col-md-4 control-label" for="submit"></label>
+            <label class="col-md-4 control-label" for="submitn"></label>
             <div class="col-md-4">
-                <button id="submit" name="submit" class="btn btn-primary" required>Proposer la vente</button>
+                <button id="submitn" name="submitn" class="btn btn-primary" required>Proposer la vente</button>
             </div>
         </div></td></tr></table>
           </div>
