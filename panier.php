@@ -1,10 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
+
 <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
 	<title>Panier</title>
 	<meta charset="utf-8"> 
+	<!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/shop-homepage.css" rel="stylesheet">
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script> $(function(){ $("#footer").load("footer.html"); });</script> 
 </head>
 <body>
+	<?php include('nav.php');?>
 	<Div Align=Center> <h3>Panier</h3>
 		<img src="panier.png" alt="Panier " height="250" width="250">
 	<br><br><br><br><br><br><br><br><br><br>
@@ -22,7 +42,11 @@
 			</table> <br> </Div>
 				
 </form>
-</body> 
+<div id="footer"></div>
+</body>
+<script> 
+$(function(){$("#footer").load("footer.html"); });
+</script> 
 </html>
 
 
