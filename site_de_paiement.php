@@ -1,71 +1,4 @@
-<?php
 
-
-
-class site_de_paiement{
-
-	function ui(panier $panier): string{
-		$total = $panier->getTotal() / 100;
-		$order = json_encode([
-			'purchase_units'=>[[
-				'items'=>array_map(function($products){
-					return[
-						'name'=>$product['name'],
-						'quantity'=>1,
-						'unit_amount'=>[
-							'value'=> $products['price']/100,
-							'currency_code'=>'EUR',
-						]
-					];
-
-
-				},$panier->getProducts()),
-				'amount'=> [
-					'currency_code' =>'EUR',
-					'value'=> $cart->getTotal()/100
-					
-				]
-
-			]]
-		]);
-		return 
-		<html>
-		<head>
-			<meta charset="utf-8">
-			<meta name="viewport" content="width=device-width, initial-scale=1">
-			<title></title>
-		</head>
-		<body>
-		<script src="https://www.paypal.com/sdk/js?client-id=test&currency=EUR&intent=authorize"></script>
-  <!-- Set up a container element for the button -->
-  <div id="paypal-button-container"></div>
-  <script>
-    paypal.Buttons({
-      
-      createOrder: (data, actions) => {
-        return actions.order.create({$order});
-      },
-      
-      onApprove: (data, actions) => {
-      	actions.order.authorize().then(function(authorization{
-      		console.log({authorization, data})
-      		const authorisationId = authorization.purchase_units[0].payments.authorization[0].id
-      	}))
-      }
-    }).render('#paypal-button-container');
-  </script>
-		
-		</body>
-		</html>
-	}
-}
-
-
-
-
-
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -99,7 +32,9 @@ class site_de_paiement{
         return actions.order.create({
           purchase_units: [{
             amount: {
-              value: '80.0' // Peut également référencer une variable ou une fonction
+              value: <?php  
+              $total = $panier->getTotal()/100;
+              ?>{$total}
             }
           }]
         });
