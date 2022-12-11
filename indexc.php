@@ -24,6 +24,15 @@ require("dbConnection.php");
 
 <body>
     <?php include('nav.php');
+    if(isset($_GET['val'])){
+        if($_GET['val']=="successdelivery"){
+                echo "<script>
+                        $(function() {
+                            $('#errorlog').text('Commande passée avec succes!').css('background-color','#1CA347').css('visibility','visible');
+                            $('#errorlog').delay(2000).fadeOut('slow');
+                        });
+                     </script>";
+            }}
     ?>
     <header class="border-primary shadow masthead text-center text-white" style="background-color: #140e0e;background-image: url('./img/fdprojet1.jpg');opacity: 1;">
         <div class="masthead-content"></div>
@@ -69,7 +78,7 @@ require("dbConnection.php");
         </div>
         <center>
         <iframe allowfullscreen frameborder="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.35566398962!2d2.2864078148539444!3d48.85142790915226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6701b4f58251b%3A0x167f5a60fb94aa76!2sECE.%20Ecole%20d&#39;ing%C3%A9nieurs.%20Engineering%20school.!5e0!3m2!1sfr!2sfr!4v1670777969911!5m2!1sfr!2sfr" width="100%" height="450" referrerpolicy="no-referrer-when-downgrade" ></iframe>
-        
+
     </center>
     </div>
     <script
