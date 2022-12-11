@@ -116,7 +116,8 @@ require_once('dbConnection.php');
                             $('#errorlog').delay(2000).fadeOut('slow');
                         });
                      </script>";
-            if($_GET['val']=="successdelivery"){
+                 }
+            elseif($_GET['val']=="successdelivery"){
                 echo "<script>
                         $(function() {
                             $('#errorlog').text('Commande passée avec succes!').css('background-color','#1CA347').css('visibility','visible');
