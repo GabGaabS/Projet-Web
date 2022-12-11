@@ -1,3 +1,6 @@
+<?php
+require("dbConnection.php");
+?>
 <!DOCTYPE html>
 <html>
 
@@ -32,112 +35,23 @@
     <div class="row">
         <div class="col-md-3 col-sm-6">
             <div class="product-grid7">
-                <div class="product-image7">
-                    <a href="#">
-                        <img class="pic-1" src="img\ordinateurventeflash.jpg">
-                    </a>
-                    <ul class="social">
-                        <li><a href="" class="fa fa-search"></a></li>
-                        <li><a href="" class="fa fa-shopping-bag"></a></li>
-                        <li><a href="" class="fa fa-shopping-cart"></a></li>
-                    </ul>
-                    <span class="product-new-label">New</span>
-                </div>
-                <div class="product-content">
-                    <h3 class="title"><a href="#">Ordinateur Micorsoft 1To</a></h3>
-                    <ul class="rating">
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                    </ul>
-                    <div class="price">1500.00$
-                        <span>2000.00$</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-            <div class="product-grid7">
-                <div class="product-image7">
-                    <a href="#">
-                        <img class="pic-1" src="img\mixeurventeflash.jpg">
-                    </a>
-                    <ul class="social">
-                        <li><a href="" class="fa fa-search"></a></li>
-                        <li><a href="" class="fa fa-shopping-bag"></a></li>
-                        <li><a href="" class="fa fa-shopping-cart"></a></li>
-                    </ul>
-                </div>
-                <div class="product-content">
-                    <h3 class="title"><a href="#">mixeur multifonction </a></h3>
-                    <ul class="rating">
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                    </ul>
-                    <div class="price">150.00$
-                        <span>200.00$</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-            <div class="product-grid7">
-                <div class="product-image7">
-                    <a href="#">
-                        <img class="pic-1" src="img\televenteflash.jpg">
-                    </a>
-                    <ul class="social">
-                        <li><a href="" class="fa fa-search"></a></li>
-                        <li><a href="" class="fa fa-shopping-bag"></a></li>
-                        <li><a href="" class="fa fa-shopping-cart"></a></li>
-                    </ul>
-                    <span class="product-new-label">New</span>
-                </div>
-                <div class="product-content">
-                    <h3 class="title"><a href="#">télévision LG 4K </a></h3>
-                    <ul class="rating">
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                    </ul>
-                    <div class="price">$2777
-                        <span>$3999.00</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-            <div class="product-grid7">
-                <div class="product-image7">
-                    <a href="#">
-                        <img class="pic-1" src="img\sacventeflash.jpg">
-                    </a>
-                    <ul class="social">
-                        <li><a href="" class="fa fa-search"></a></li>
-                        <li><a href="" class="fa fa-shopping-bag"></a></li>
-                        <li><a href="" class="fa fa-shopping-cart"></a></li>
-                    </ul>
-                    <span class="product-new-label">New</span>
-                </div>
-                <div class="product-content">
-                    <h3 class="title"><a href="#">Sac Louis Vitton</a></h3>
-                    <ul class="rating">
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                    </ul> 
-                    <div class="price">$1000.00
-                        <span>$1220.00</span>
-                    </div>
+                <?php
+                $total = "SELECT * FROM `item` ORDER BY RAND() DESC LIMIT 5";
+                $statement = $db->query($total);
+                if (!$statement = $db->query($total)) {
+                    echo 'Query failed: ' . $db->error;
+                } else {
+                    foreach($statement as $row){
+                        echo $row['item_id'] . '<br>';
+                    }
+                }
+                ?>
+                <div class="thumbnail">
+                <img src="<?php echo $item['item_picture']; ?>" alt="Item image" style="width:250px; height:250px">
+                <div class="caption">
+                    <h4 class="pull-right">$ <?php echo $item['current_bid']; ?></h4>
+                    <h4><a href="productpage.php?auct=<?php echo $item['auction_id']; ?>"><?php echo $item['label']; ?> (<?php echo $item['state']; ?>)</a></h4>
+                    <p><?php echo $item['description']; ?></p>
                 </div>
             </div>
         </div>
