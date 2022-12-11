@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : dim. 11 déc. 2022 à 17:26
+-- Généré le : dim. 11 déc. 2022 à 21:55
 -- Version du serveur : 8.0.27
 -- Version de PHP : 7.4.26
 
@@ -52,10 +52,10 @@ CREATE TABLE IF NOT EXISTS `auction` (
 --
 
 INSERT INTO `auction` (`auction_id`, `start_price`, `reserve_price`, `current_bid`, `start_time`, `duration_id`, `end_time`, `viewings`, `win_confirmed`, `item_id`, `user_id`, `type`) VALUES
-(1, '10.00', '90.00', '91.00', '2022-11-19 15:02:42', 2, '2022-11-19 15:32:47', 11, 1, 1, 1, 1),
-(2, '2.00', '10.00', '2.00', '2022-11-21 13:28:22', 2, '2022-11-24 13:28:22', 8, 0, 2, 1, 1),
-(3, '20.00', '500.00', '25.00', '2022-11-21 13:30:07', 3, '2022-11-26 13:30:07', 6, 0, 3, 1, 1),
-(4, '25.00', '600.00', '25.00', '2022-11-21 13:31:12', 3, '2022-11-26 13:31:12', 3, 0, 4, 1, 1),
+(1, '10.00', '90.00', '91.00', '2022-11-19 15:02:42', 5, '2022-11-19 15:32:47', 11, 1, 1, 1, 1),
+(2, '2.00', '10.00', '2.00', '2022-11-21 13:28:22', 5, '2022-11-24 13:28:22', 8, 0, 2, 1, 1),
+(3, '20.00', '500.00', '25.00', '2022-11-21 13:30:07', 5, '2022-11-26 13:30:07', 6, 0, 3, 1, 1),
+(4, '25.00', '600.00', '25.00', '2022-11-21 13:31:12', 5, '2022-11-26 13:31:12', 3, 0, 4, 1, 1),
 (6, '400000.00', '450000.00', '400000.00', '2022-12-03 16:05:05', 5, '2022-12-13 16:05:05', 13, 0, 6, 1, 1),
 (7, '80.00', '250.00', '80.00', '2022-12-03 16:06:15', 5, '2022-12-13 16:06:15', 4, 0, 7, 1, 1),
 (8, '10.00', '15.00', '10.00', '2022-12-03 16:07:15', 5, '2022-12-13 16:07:15', 0, 0, 8, 1, 1),
@@ -188,7 +188,6 @@ CREATE TABLE IF NOT EXISTS `item` (
 --
 
 INSERT INTO `item` (`item_id`, `item_picture`, `label`, `description`, `state_id`, `category_id`) VALUES
-(1, 'uploads/item/111922-151142_unnamed.jpg', 'yhhh', 'kjkjkj', 1, 8),
 (3, 'uploads/item/112122-131107_TIPE-3 1.jpg', 'C\'est claire comme Claire', 'Livre nul', 1, 4),
 (4, 'uploads/item/112122-131112_TIPE-2.jpg', 'Guillaume et ses amis', 'Le jeu trop trop mauvais quoi', 4, 31),
 (6, 'uploads/item/120322-161205_ferrari.jpg', 'Ferrari SP48 Unica', 'Belle voiture italienne, le 0 à 100 en 2.3s', 1, 7),
@@ -295,7 +294,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`user_id`, `username`, `passwd`, `profile_picture`, `first_name`, `last_name`, `email`, `birthdate`, `rating_count`, `rating`, `role_id`) VALUES
-(1, 'GabGabS', '356a192b7913b04c54574d18c28d46e6395428ab', 'uploads/profile/031116-120348_image_bceabb1299.jpg', 'Gaby', 'Lst', 'gaby@ece.fr', '2001-12-02', 24, '4.96', 2),
+(1, 'GabGabS', '356a192b7913b04c54574d18c28d46e6395428ab', 'uploads/profile/031116-120348_image_bceabb1299.jpg', 'Gaby', 'Lst', 'gabriel.lessert@edu.ece.fr', '2001-12-02', 24, '4.96', 2),
 (2, 'Gabuyer', '356a192b7913b04c54574d18c28d46e6395428ab', 'uploads/profile/stock.jpg', 'Gaby', 'lacheteur', 'Craby@ece.fe', '2001-12-02', 1, '3.00', 1),
 (3, 'admin', '356a192b7913b04c54574d18c28d46e6395428ab', 'uploads/profile/stock.jpg', 'Prenom', 'Nom', 'admin@ece.fr', '2001-12-02', 0, '0.00', 0);
 
