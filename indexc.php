@@ -16,10 +16,6 @@
     <link rel="stylesheet" href="./css/Shop-item.css">
     <link rel="stylesheet" href="./css/Shopping-Grid.css">
     <link rel="stylesheet" href="./css/untitled.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
     <script> $(function(){ $("#footer").load("footer.html"); });</script> 
 </head>
 
@@ -28,7 +24,7 @@
     ?>
     <header class="border-primary shadow masthead text-center text-white" style="background-color: #140e0e;background-image: url('./img/fdprojet1.jpg');opacity: 1;">
         <div class="masthead-content"></div>
-        <h2 class="masthead-subheading mb-0">Site de vente réalisé par les étudiants de L'ECE</h2>
+        <h2 class="masthead-subheading mb-0" style="font-size: 40px;" >Site de vente réalisé par les étudiants de L'ECE</h2>
         <h1 class="masthead-heading mb-0" style="font-size: 100px;">Omnes MarketPlace</h1>
     </header><div class="shopping-grid">
     <div class="container">
@@ -38,8 +34,7 @@
             <div class="product-grid7">
                 <div class="product-image7">
                     <a href="#">
-                        <img class="pic-1" src="http://bestjquery.com/tutorial/product-grid/demo8/images/img-1.jpg">
-                        <img class="pic-2" src="http://bestjquery.com/tutorial/product-grid/demo8/images/img-2.jpg">
+                        <img class="pic-1" src="img\ordinateurventeflash.jpg">
                     </a>
                     <ul class="social">
                         <li><a href="" class="fa fa-search"></a></li>
@@ -49,7 +44,7 @@
                     <span class="product-new-label">New</span>
                 </div>
                 <div class="product-content">
-                    <h3 class="title"><a href="#">Men's Blazer</a></h3>
+                    <h3 class="title"><a href="#">Ordinateur Micorsoft 1To</a></h3>
                     <ul class="rating">
                         <li class="fa fa-star"></li>
                         <li class="fa fa-star"></li>
@@ -57,8 +52,8 @@
                         <li class="fa fa-star"></li>
                         <li class="fa fa-star"></li>
                     </ul>
-                    <div class="price">$15.00
-                        <span>$20.00</span>
+                    <div class="price">1500.00$
+                        <span>2000.00$</span>
                     </div>
                 </div>
             </div>
@@ -67,8 +62,7 @@
             <div class="product-grid7">
                 <div class="product-image7">
                     <a href="#">
-                        <img class="pic-1" src="http://bestjquery.com/tutorial/product-grid/demo8/images/img-3.jpg">
-                        <img class="pic-2" src="http://bestjquery.com/tutorial/product-grid/demo8/images/img-4.jpg">
+                        <img class="pic-1" src="img\mixeurventeflash.jpg">
                     </a>
                     <ul class="social">
                         <li><a href="" class="fa fa-search"></a></li>
@@ -77,7 +71,7 @@
                     </ul>
                 </div>
                 <div class="product-content">
-                    <h3 class="title"><a href="#">Women's White Shirt</a></h3>
+                    <h3 class="title"><a href="#">mixeur multifonction </a></h3>
                     <ul class="rating">
                         <li class="fa fa-star"></li>
                         <li class="fa fa-star"></li>
@@ -85,35 +79,8 @@
                         <li class="fa fa-star"></li>
                         <li class="fa fa-star"></li>
                     </ul>
-                    <div class="price">$15.00</div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-            <div class="product-grid7">
-                <div class="product-image7">
-                    <a href="#">
-                        <img class="pic-1" src="http://bestjquery.com/tutorial/product-grid/demo8/images/img-5.jpg">
-                        <img class="pic-2" src="http://bestjquery.com/tutorial/product-grid/demo8/images/img-6.jpg">
-                    </a>
-                    <ul class="social">
-                        <li><a href="" class="fa fa-search"></a></li>
-                        <li><a href="" class="fa fa-shopping-bag"></a></li>
-                        <li><a href="" class="fa fa-shopping-cart"></a></li>
-                    </ul>
-                    <span class="product-new-label">New</span>
-                </div>
-                <div class="product-content">
-                    <h3 class="title"><a href="#">Men's Blazer</a></h3>
-                    <ul class="rating">
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                    </ul>
-                    <div class="price">$15.00
-                        <span>$20.00</span>
+                    <div class="price">150.00$
+                        <span>200.00$</span>
                     </div>
                 </div>
             </div>
@@ -122,8 +89,7 @@
             <div class="product-grid7">
                 <div class="product-image7">
                     <a href="#">
-                        <img class="pic-1" src="http://bestjquery.com/tutorial/product-grid/demo8/images/img-7.jpg">
-                        <img class="pic-2" src="http://bestjquery.com/tutorial/product-grid/demo8/images/img-8.jpg">
+                        <img class="pic-1" src="img\televenteflash.jpg">
                     </a>
                     <ul class="social">
                         <li><a href="" class="fa fa-search"></a></li>
@@ -133,7 +99,35 @@
                     <span class="product-new-label">New</span>
                 </div>
                 <div class="product-content">
-                    <h3 class="title"><a href="#">Men's Blazer</a></h3>
+                    <h3 class="title"><a href="#">télévision LG 4K </a></h3>
+                    <ul class="rating">
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                    </ul>
+                    <div class="price">$2777
+                        <span>$3999.00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="product-grid7">
+                <div class="product-image7">
+                    <a href="#">
+                        <img class="pic-1" src="img\sacventeflash.jpg">
+                    </a>
+                    <ul class="social">
+                        <li><a href="" class="fa fa-search"></a></li>
+                        <li><a href="" class="fa fa-shopping-bag"></a></li>
+                        <li><a href="" class="fa fa-shopping-cart"></a></li>
+                    </ul>
+                    <span class="product-new-label">New</span>
+                </div>
+                <div class="product-content">
+                    <h3 class="title"><a href="#">Sac Louis Vitton</a></h3>
                     <ul class="rating">
                         <li class="fa fa-star"></li>
                         <li class="fa fa-star"></li>
@@ -141,8 +135,8 @@
                         <li class="fa fa-star"></li>
                         <li class="fa fa-star"></li>
                     </ul> 
-                    <div class="price">$15.00
-                        <span>$20.00</span>
+                    <div class="price">$1000.00
+                        <span>$1220.00</span>
                     </div>
                 </div>
             </div>
@@ -158,7 +152,11 @@
                 <h2 class="text-center">Où sommes-nous ?</h2>
                 <p class="text-center">Retrouvez notre shop directement à Paris</p>
             </div>
-        </div><iframe allowfullscreen="" frameborder="0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDaEw6o8OhJvRQnTF3gI_tibMejtfasOlY&amp;q=ECE+Paris+Lyon+37%2C+Quai+de+Grenelle+75015&amp;zoom=15" width="100%" height="450"></iframe></div>
+        </div>
+        <center>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.35566398962!2d2.2864078148539444!3d48.85142790915226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6701b4f58251b%3A0x167f5a60fb94aa76!2sECE.%20Ecole%20d&#39;ing%C3%A9nieurs.%20Engineering%20school.!5e0!3m2!1sfr!2sfr!4v1670777969911!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </center>
+    </div>
     <script
         src="./js/jquery.min.js"></script>
         <script src="./bootstrap/js/bootstrap.min.js"></script>
