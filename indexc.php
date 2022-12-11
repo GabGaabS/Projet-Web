@@ -33,21 +33,21 @@ require("dbConnection.php");
     <div class="container">
     <h2 class="text-center">Ventes flash</h2>
     <div class="row">
-        <div class="col-md-3 col-sm-6">
             <div class="product-grid7">
                 <?php
-                $total = "SELECT * FROM `item` ORDER BY RAND() DESC LIMIT 5";
-                $statement = $db->query($total);
-                if (!$statement = $db->query($total)) {
-                    echo 'Query failed: ' . $db->error;
-                } else {
-                    foreach($statement as $row){
-                        echo $row['item_id'] . '<br>';
-                    }
-                }
+                $sql = "SELECT A.current_bid, A.auction_id, I.item_picture, I.label, I.description, S.state 
+            FROM Auction A, Item I, State S ORDER BY RAND() LIMIT 4";
+                $stmt = $db -> prepare($sql);
+                $stmt -> execute();
+                $result = $stmt -> fetchAll();
                 ?>
-                <div class="thumbnail">
-                <img src="<?php echo $item['item_picture']; ?>" alt="Item image" style="width:250px; height:250px">
+    <div class="col-md-12" style="padding-top:2px">
+        <?php
+        foreach ($result as $item) {
+             {?>
+        <div id="auction" class="col-md-3">
+            <div class="thumbnail">
+                <img src="<?php echo $item['item_picture']; ?>" alt="Item image" style="width:450px; height:250px">
                 <div class="caption">
                     <h4 class="pull-right">$ <?php echo $item['current_bid']; ?></h4>
                     <h4><a href="productpage.php?auct=<?php echo $item['auction_id']; ?>"><?php echo $item['label']; ?> (<?php echo $item['state']; ?>)</a></h4>
@@ -55,7 +55,7 @@ require("dbConnection.php");
                 </div>
             </div>
         </div>
-    </div>
+        <?php }} ?>
 </div>
 </div>
     <div></div>
