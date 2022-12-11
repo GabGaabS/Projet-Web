@@ -7135,3 +7135,33 @@ button.close {
     display: none !important;
   }
 }
+
+@media (min-width:992px) {
+  header.masthead {
+    padding-top: calc(10rem + 55px);
+    padding-bottom: 10rem;
+  }
+}
+
+header.masthead {
+  position: relative;
+  overflow: hidden;
+  padding-top: calc(7rem + 72px);
+  padding-bottom: 7rem;
+  background: linear-gradient(0deg,#ff6a00,#ee0979);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-attachment: scroll;
+  background-size: cover;
+}
+
+element.style {
+  background-color: #140e0e;
+  background-image: url("fdprojet1.jpg");
+  opacity: 1;
+}
+
+.border-primary.shadow.masthead.text-center.text-white {
+}
+
+

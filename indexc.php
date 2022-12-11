@@ -19,6 +19,10 @@ require("dbConnection.php");
     <link rel="stylesheet" href="./css/Shop-item.css">
     <link rel="stylesheet" href="./css/Shopping-Grid.css">
     <link rel="stylesheet" href="./css/untitled.css">
+        <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
     <script> $(function(){ $("#footer").load("footer.html"); });</script> 
 </head>
 
@@ -34,7 +38,7 @@ require("dbConnection.php");
                      </script>";
             }}
     ?>
-    <header class="border-primary shadow masthead text-center text-white" style="background-color: #140e0e;background-image: url('./img/fdprojet1.jpg');opacity: 1;">
+    <header class="" style="background-color: #140e0e;background-image: url('./img/fdprojet1.jpg');opacity: 1;">
         <div class="masthead-content"></div>
         <h2 class="masthead-subheading mb-0" style="font-size: 40px;" >Site de vente réalisé par les étudiants de L'ECE</h2>
         <h1 class="masthead-heading mb-0" style="font-size: 100px;">Omnes MarketPlace</h1>
