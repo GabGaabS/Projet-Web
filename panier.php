@@ -1,4 +1,8 @@
+<?php
+$payment = new \app\Paypal\Payment();
+echo $payment->ui($panier);
 
+?>
 
 <?php
 
