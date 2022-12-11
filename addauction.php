@@ -29,10 +29,11 @@ if (isset($_POST['submit'])) {
     $value = $row['duration'];
     $enddate = $enddate->modify('+' . $value . ' day');
     $formatend = $enddate->format('Y-m-d H:i:s');
+    $typeVente = $_POST['type_vente'];
     if ($reservePrice > $startPrice) {
         $itemSQL = 'INSERT INTO Item VALUES (NULL, :item_picture, :label, :description, :state_id, :category_id)';
         $auctionSQL = 'INSERT INTO Auction VALUES (NULL, :start_price, :reserve_price, :start_price, :start_time, :duration_id, :end_time,
-              DEFAULT, FALSE, LAST_INSERT_ID(), :user_id)';
+              DEFAULT, FALSE, LAST_INSERT_ID(), :user_id, :type_vente)';
         $itemSTMT = $db->prepare($itemSQL);
         $itemSTMT->bindParam(':item_picture', $newfilename);
         $itemSTMT->bindParam(':label', $name);
@@ -46,6 +47,7 @@ if (isset($_POST['submit'])) {
         $auctionSTMT->bindParam(':duration_id', $auctionDuration);
         $auctionSTMT->bindParam(':end_time', $formatend);
         $auctionSTMT->bindParam(':user_id', $_SESSION['user_id']);
+        $auctionSTMT->bindParam(':type_vente', $typeVente);
         $db->beginTransaction();
         $itemSTMT->execute();
         if (!$itemSTMT->rowCount()) {
@@ -84,7 +86,7 @@ if (isset($_POST['submit'])) {
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
-    <title>Add Auction</title>
+    <title>Ajouter un produit</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -92,6 +94,18 @@ if (isset($_POST['submit'])) {
     <!-- Bootstrap Core JavaScript -->
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      function catsel(sel) {
+        //if (sel.value=="-1" ) return;
+        var opt=sel.getElementsByTagName("option" );
+        for (var i=0; i<opt.length; i++) {
+          var x=document.getElementById(opt[i].value);
+          if (x) x.style.display="none";
+        }
+        var cat = document.getElementById(sel.value);
+        if (cat) cat.style.display="block";
+      }
+    </script>
     <script> $(function(){ $("#footer").load("footer.html"); });</script> 
 
 </head>
@@ -108,7 +122,7 @@ include 'nav.php';
     <fieldset style="padding-top:50px">
         <!-- Item Name -->
         <div class="form-group">
-            <label class="col-md-4 control-label" for="item-name">Product Name</label>
+            <label class="col-md-4 control-label" for="item-name">Nom du produit</label>
             <div class="col-md-4">
                 <input id="item-name" name="item-name" placeholder="Product Name" class="form-control" required>
             </div>
@@ -118,7 +132,7 @@ include 'nav.php';
             <label class="col-md-4 control-label" for="item-category">Catégorie</label>
             <div class="col-md-4">
                 <select id="item-category" name="item-category" class="form-control" required>
-                    <option selected disabled hidden>Please Select a Category</option>
+                    <option selected disabled hidden>Catégorie</option>
                     <?php
                     $sql = 'SELECT * FROM Category';
                     foreach ($db->query($sql) as $row) { ?>
@@ -129,13 +143,34 @@ include 'nav.php';
         </div>
         <!-- Item Description -->
         <div class="form-group">
-            <label class="col-md-4 control-label" for="item-description">Product Description</label>
+            <label class="col-md-4 control-label" for="item-description">Description</label>
             <div class="col-md-4">
                 <textarea class="form-control" id="item-description" name="item-description"
                           style="resize:none" required></textarea>
             </div>
         </div>
-        <!-- Item State -->
+        <!-- Type de vente -->
+        <table>
+      <tr>
+        <td>
+        Type de vente :
+        </td>
+        <td>
+          <select onchange="catsel(this)">
+          <!--<option value="-1">None</option>!-->
+            <option value="1" type_vente="1">Vente classique</option>
+            <option value="2" type_vente="2">Vente par enchère</option>
+            <option value="3" type_vente="3">Vente par négociation</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <div id="1">
+            <table><tr><td>blabla 1</td></tr></table>
+          </div>
+          <div id="2">
+            <table><tr><td><!-- Item State -->
         <div class="form-group">
             <label class="col-md-4 control-label" for="item-state">Etat du produit</label>
             <div class="col-md-4">
@@ -181,7 +216,7 @@ include 'nav.php';
                     <?php
                     $sql = 'SELECT * FROM Duration';
                     foreach ($db->query($sql) as $row) { ?>
-                        <option value="<?php echo $row['duration_id']; ?>"><?php echo $row['duration']; ?> Days</option>
+                        <option value="<?php echo $row['duration_id']; ?>"><?php echo $row['duration']; ?> Jour(s)</option>
                     <?php } ?>
                 </select>
             </div>
@@ -195,11 +230,19 @@ include 'nav.php';
         </div>
         <!-- Submit Auction -->
         <div class="form-group">
-            <label class="col-md-4 control-label" for="submit">Ready to Submit?</label>
+            <label class="col-md-4 control-label" for="submit"></label>
             <div class="col-md-4">
-                <button id="submit" name="submit" class="btn btn-primary" required>Submit to Listings</button>
+                <button id="submit" name="submit" class="btn btn-primary" required>Vendre</button>
             </div>
-        </div>
+        </div></td></tr></table>
+          </div>
+          <div id="3">
+            <table><tr><td>blabla 3</td></tr></table>
+          </div>
+        </td>
+      </tr>
+    </table>
+        
     </fieldset>
 </form>
 
