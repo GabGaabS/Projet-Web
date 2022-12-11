@@ -8,7 +8,7 @@
 	<Div Align=Center> <h3>Panier</h3>
 		<img src="panier.png" alt="Panier " height="250" width="250">
 	<br><br><br><br><br><br><br><br><br><br>
-		<form action="TP5_Ex4_creditCard.php" method="post">
+		<form action="site_de_paiement.html" method="post">
 			<table>
 				<tr>
 					<td>Le montant à payer est:</td>
@@ -16,7 +16,7 @@
 				</tr> 
 				<tr>
 					<td colspan="2" align="center">
-					<input type="submit" name="button1" value="Submit">
+					<button onclick="window.location.href = 'file://C:\wamp64\www\web\site_de_paiement.html';">Cliquez Ici</button>
 					</td> 
 				</tr>
 			</table> <br> </Div>
