@@ -1,40 +1,36 @@
 
 <!DOCTYPE html>
 <html lang="en">
+<center>
 <head>
-	<center>
 
-		<header>
+	<header>
 			<link rel="site de paiement" href="./css/site_de_paiement.css">
 		<div id="header">
 			<h1>Paiement</h1>
 		</div>
 	</header>
-
 	<br><br><br><br><br>
-	
-
-    <section>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Shop Homepage - Start Bootstrap Template</title>
+  <script src="https://www.paypal.com/sdk/js?client-id=test&currency=EUR"></script>
 </head>
 <body>
-	 <!-- Replace "test" with your own sandbox Business account app client ID -->
-  <script src="https://www.paypal.com/sdk/js?client-id=test&currency=EUR"></script>
-  <!-- Set up a container element for the button -->
-  <div id="paypal-button-container"></div>
-  <script>
-    paypal.Buttons({
-      // Sets up the transaction when a payment button is clicked
+	<section>
+
+  		<div id="paypal-button-container"></div>
+  		<script>
+    		paypal.Buttons({
+      
       createOrder: (data, actions) => {
         return actions.order.create({
           purchase_units: [{
             amount: {
-              value: <?php  
+              value: <?php
               $total = $panier->getTotal()/100;
-              ?>{$total}
+              ?>
             }
           }]
         });
@@ -50,7 +46,7 @@
       }
     }).render('#paypal-button-container');
   </script>
-</body>
+
 </section>
   <section>
   	
@@ -126,7 +122,6 @@
 
        </table>
        </form>
-</body>
 </section>
 </center>
 <footer>

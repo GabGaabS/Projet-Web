@@ -1,33 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Panier</title>
+	<meta charset="utf-8"> 
+</head>
+<body>
+	<Div Align=Center> <h3>Panier</h3>
+		<img src="panier.png" alt="Panier " height="250" width="250">
+	<br><br><br><br><br><br><br><br><br><br>
+		<form action="site_de_paiement.html" method="post">
+			<table>
+				<tr>
+					<td>Le montant à payer est:</td>
+					<td><input type="number" step="0.01" name="amount"></td>
+				</tr> 
+				<tr>
+					<td colspan="2" align="center">
+					<button onclick="window.location.href = 'file://C:\wamp64\www\web\site_de_paiement.html';">Cliquez Ici</button>
+					</td> 
+				</tr>
+			</table> <br> </Div>
+				
+</form>
+</body> 
+</html>
+
+
+
+
 <?php
-$payment = new \app\Paypal\Payment();
-echo $payment->ui($panier);
 
-?>
+	//si le bouton est cliqué
+	if (isset($_POST["button1"])) {
 
-<?php
-
-	class panier{
-		 function getProducts(): array
-		{
-			return [
-				[
-					'name' => 'produit1',
-					'price' => 2000
-
-				],
-				[
-					'name' => 'produit2',
-					'price' => 4000
-				]
-			];
+		//montant à payer
+		$montant = isset($_POST["amount"])? $_POST["amount"] : "";
+		if (empty($montant)) { 
+			$montant = 0.0;
 		}
-
-
-		function getTotal(): int
-		{
-			return array_reduce($this->getProducts(), fn(int $acc, array $products)=> $acc += $product, 0);
-
-		}
+		//si une selection de carte de crédit est faite
+		$card = isset($_POST["creditCard"])? $_POST["creditCard"] :"";
+		
+		//afficher information sur le paiement
+		echo "<br>Le montant à payer est: " . $montant;
+		echo "<br>A payer par: " . $card;
 	}
-	
 ?>
