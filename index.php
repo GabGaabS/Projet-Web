@@ -112,7 +112,14 @@ require_once('dbConnection.php');
             if($_GET['val']=="success"){
                 echo "<script>
                         $(function() {
-                            $('#errorlog').text('Registration Successful!').css('background-color','#1CA347').css('visibility','visible');
+                            $('#errorlog').text('Inscription reussite!').css('background-color','#1CA347').css('visibility','visible');
+                            $('#errorlog').delay(2000).fadeOut('slow');
+                        });
+                     </script>";
+            if($_GET['val']=="successdelivery"){
+                echo "<script>
+                        $(function() {
+                            $('#errorlog').text('Commande passée avec succes!').css('background-color','#1CA347').css('visibility','visible');
                             $('#errorlog').delay(2000).fadeOut('slow');
                         });
                      </script>";
