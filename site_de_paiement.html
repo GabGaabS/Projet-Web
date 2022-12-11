@@ -2,7 +2,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<CENTER>
+	<center>
+
 		<header>
 			<link rel="site de paiement" href="./css/site_de_paiement.css">
 		<div id="header">
@@ -10,8 +11,10 @@
 		</div>
 	</header>
 
-	<br><br><br><br><br><br><br><br>
+	<br><br><br><br><br>
+	
 
+    <section>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -29,7 +32,7 @@
         return actions.order.create({
           purchase_units: [{
             amount: {
-              value: '77.44' // Can also reference a variable or function
+              value: '80.0' // Peut également référencer une variable ou une fonction
             }
           }]
         });
@@ -46,9 +49,11 @@
     }).render('#paypal-button-container');
   </script>
 </body>
-<body>
-       <h2>adresse de livraison</h2>
-       <form action="livraison.php" method="post">
+</section>
+  <section>
+  	
+  <h2>adresse de livraison</h2>
+  <form action="livraison.php" method="post">
               <style type="text/css">
                body{
                    background-color: #eeee;
@@ -120,7 +125,23 @@
        </table>
        </form>
 </body>
-</CENTER>
+</section>
+</center>
+<footer>
+	<center>
+		<h3>Restons en contact</h3>
+        <p class="Emplois"> <br>
+        	Email :  OmnesMarketPlace@edu.ece.fr
+            <br>
+            Adresse:
+            POLLUX
+            37, Quai de Grenelle
+            75015 Paris<br>
+            Tel : 01 44 39 06 00
+            </p>
+        </center>
+
+    </footer>
 </body>
    
 </body>
