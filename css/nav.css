@@ -1,0 +1,17 @@
+
+body{
+    margin: 0;
+    padding: 0;
+}
+.navbar navbar-inverse navbar-fixed-top{
+    background-color: #000066;
+    color: white;
+}
+
+.brand{
+    font-size: large;
+}
+
+.nav{
+    font-size: medium;
+}
