@@ -28,7 +28,7 @@ session_start();
             <!-- Options dans la navbar -->
             <!-- accueil -->
                             <li>
-                                <a href="listings.php">Accueil</a>
+                                <a href="indexc.php">Accueil</a>
                             </li>
                             <li>
                                 <?php
@@ -55,6 +55,9 @@ session_start();
                             
                                                 -->
                             <!--  Tout parcourir -->
+                            <li>
+                                <a href="listings.php">Tout parcourir</a>
+                            </li>
 
                             <!-- Notif -->
                             <li>
