@@ -184,8 +184,7 @@ else {
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
-    <title>Accueil</title>
-    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <title>Tout parcourir</title>
 
 
     <!-- Bootstrap Core CSS -->

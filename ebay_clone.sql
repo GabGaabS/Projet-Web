@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : sam. 10 déc. 2022 à 13:58
+-- Généré le : dim. 11 déc. 2022 à 17:26
 -- Version du serveur : 8.0.27
 -- Version de PHP : 7.4.26
 
@@ -40,6 +40,7 @@ CREATE TABLE IF NOT EXISTS `auction` (
   `win_confirmed` tinyint(1) NOT NULL DEFAULT '0',
   `item_id` int NOT NULL,
   `user_id` int NOT NULL,
+  `type` int NOT NULL DEFAULT '1',
   PRIMARY KEY (`auction_id`),
   KEY `Auction_Duration` (`duration_id`),
   KEY `Auction_Item` (`item_id`),
@@ -50,19 +51,19 @@ CREATE TABLE IF NOT EXISTS `auction` (
 -- Déchargement des données de la table `auction`
 --
 
-INSERT INTO `auction` (`auction_id`, `start_price`, `reserve_price`, `current_bid`, `start_time`, `duration_id`, `end_time`, `viewings`, `win_confirmed`, `item_id`, `user_id`) VALUES
-(1, '10.00', '90.00', '91.00', '2022-11-19 15:02:42', 2, '2022-11-19 15:32:47', 11, 1, 1, 1),
-(2, '2.00', '10.00', '2.00', '2022-11-21 13:28:22', 2, '2022-11-24 13:28:22', 8, 0, 2, 1),
-(3, '20.00', '500.00', '25.00', '2022-11-21 13:30:07', 3, '2022-11-26 13:30:07', 6, 0, 3, 1),
-(4, '25.00', '600.00', '25.00', '2022-11-21 13:31:12', 3, '2022-11-26 13:31:12', 3, 0, 4, 1),
-(6, '400000.00', '450000.00', '400000.00', '2022-12-03 16:05:05', 5, '2022-12-13 16:05:05', 1, 0, 6, 1),
-(7, '80.00', '250.00', '80.00', '2022-12-03 16:06:15', 5, '2022-12-13 16:06:15', 3, 0, 7, 1),
-(8, '10.00', '15.00', '10.00', '2022-12-03 16:07:15', 5, '2022-12-13 16:07:15', 0, 0, 8, 1),
-(9, '250.00', '300.00', '250.00', '2022-12-03 16:09:26', 5, '2022-12-13 16:09:26', 2, 0, 9, 1),
-(10, '135.00', '150.00', '135.00', '2022-12-03 16:12:36', 5, '2022-12-13 16:12:36', 0, 0, 10, 1),
-(11, '2549.00', '2570.00', '2549.00', '2022-12-03 16:18:56', 5, '2022-12-13 16:18:56', 2, 0, 11, 1),
-(12, '80.00', '90.00', '80.00', '2022-12-03 16:23:23', 5, '2022-12-13 16:23:23', 0, 0, 12, 1),
-(13, '11850.00', '12000.00', '11850.00', '2022-12-03 16:28:00', 5, '2022-12-13 16:28:00', 0, 0, 13, 1);
+INSERT INTO `auction` (`auction_id`, `start_price`, `reserve_price`, `current_bid`, `start_time`, `duration_id`, `end_time`, `viewings`, `win_confirmed`, `item_id`, `user_id`, `type`) VALUES
+(1, '10.00', '90.00', '91.00', '2022-11-19 15:02:42', 2, '2022-11-19 15:32:47', 11, 1, 1, 1, 1),
+(2, '2.00', '10.00', '2.00', '2022-11-21 13:28:22', 2, '2022-11-24 13:28:22', 8, 0, 2, 1, 1),
+(3, '20.00', '500.00', '25.00', '2022-11-21 13:30:07', 3, '2022-11-26 13:30:07', 6, 0, 3, 1, 1),
+(4, '25.00', '600.00', '25.00', '2022-11-21 13:31:12', 3, '2022-11-26 13:31:12', 3, 0, 4, 1, 1),
+(6, '400000.00', '450000.00', '400000.00', '2022-12-03 16:05:05', 5, '2022-12-13 16:05:05', 13, 0, 6, 1, 1),
+(7, '80.00', '250.00', '80.00', '2022-12-03 16:06:15', 5, '2022-12-13 16:06:15', 4, 0, 7, 1, 1),
+(8, '10.00', '15.00', '10.00', '2022-12-03 16:07:15', 5, '2022-12-13 16:07:15', 0, 0, 8, 1, 1),
+(9, '250.00', '300.00', '250.00', '2022-12-03 16:09:26', 5, '2022-12-13 16:09:26', 2, 0, 9, 1, 1),
+(10, '135.00', '150.00', '135.00', '2022-12-03 16:12:36', 5, '2022-12-13 16:12:36', 0, 0, 10, 1, 1),
+(11, '2549.00', '2570.00', '2549.00', '2022-12-03 16:18:56', 5, '2022-12-13 16:18:56', 2, 0, 11, 1, 1),
+(12, '80.00', '90.00', '80.00', '2022-12-03 16:23:23', 5, '2022-12-13 16:23:23', 0, 0, 12, 1, 1),
+(13, '11850.00', '12000.00', '11850.00', '2022-12-03 16:28:00', 5, '2022-12-13 16:28:00', 0, 0, 13, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -188,14 +189,13 @@ CREATE TABLE IF NOT EXISTS `item` (
 
 INSERT INTO `item` (`item_id`, `item_picture`, `label`, `description`, `state_id`, `category_id`) VALUES
 (1, 'uploads/item/111922-151142_unnamed.jpg', 'yhhh', 'kjkjkj', 1, 8),
-(2, 'uploads/item/112122-131122_photo moi.png', 'Vinoth le chibre', 'Horrible', 2, 19),
 (3, 'uploads/item/112122-131107_TIPE-3 1.jpg', 'C\'est claire comme Claire', 'Livre nul', 1, 4),
 (4, 'uploads/item/112122-131112_TIPE-2.jpg', 'Guillaume et ses amis', 'Le jeu trop trop mauvais quoi', 4, 31),
-(6, 'uploads/item/120322-161205_ferrari.jpg', 'ferrari SP48 Unica', 'Belle voiture italienne, le 0 Ã  100 en 2.3s', 1, 7),
-(7, 'uploads/item/120322-161215_theweeknd concert.jpeg', 'theweeknd concert', 'Un concert de qualitÃ© d\'un artiste mondialement connu ', 1, 15),
+(6, 'uploads/item/120322-161205_ferrari.jpg', 'Ferrari SP48 Unica', 'Belle voiture italienne, le 0 à 100 en 2.3s', 1, 7),
+(7, 'uploads/item/120322-161215_theweeknd concert.jpeg', 'The Weeknd concert', 'Un concert de qualité d\'un artiste mondialement connu (The Weeknd)', 1, 15),
 (8, 'uploads/item/120322-161215_one piece.jpg', 'One piece dernier tome', 'Le dernier tome de one piece', 1, 4),
-(10, 'uploads/item/120322-161236_nike air force1.jpg', 'Nike air force 1 ', 'Une paire de chaussure agrÃ©able et portable a n\'importe quel moment', 1, 8),
-(11, 'uploads/item/120322-161256_pcgamer.jpg', 'Pc gamer intel core i7', 'Processeur : Intel Core i7-13700KF, 8x 3.40GHz + 8x 2.50GHz\r\ncarte mÃ¨re : ASUS Prime Z690-A DDR5, S. 1700\r\nCarte Graphique : NVIDIA GeForce RTX 3070 Ti 8Go\r\nSytÃ¨me d\'Exploitation : Windows 11 Home\r\nRAM : 16Go DDR5-6000 | ADATA XPG Lancer RGB\r\n', 1, 5),
+(10, 'uploads/item/120322-161236_nike air force1.jpg', 'Nike air force 1 ', 'Une paire de chaussure agréable et portable à n\'importe quel moment', 1, 8),
+(11, 'uploads/item/120322-161256_pcgamer.jpg', 'PC de gaming Intel Core i7', 'Processeur : Intel Core i7-13700KF, 8x 3.40GHz + 8x 2.50GHz\r\ncarte mère : ASUS Prime Z690-A DDR5, S. 1700\r\nCarte Graphique : NVIDIA GeForce RTX 3070 Ti 8Go\r\nSystème d\'Exploitation : Windows 11 Home\r\nRAM : 16Go DDR5-6000 | ADATA XPG Lancer RGB\r\n', 1, 5),
 (12, 'uploads/item/120322-161223_filet copaya.jpg', 'Filet de volley Copaya', 'Un filet de beach-volley qualitatif. Le sac est composÃ© du filet, des poteaux, des lignes et de tendeurs.', 1, 27),
 (13, 'uploads/item/120322-161200_montre rolex.jpg', 'Montre DATEJUST 36 Rolex', 'Belle montre ROLEX ', 1, 20);
 

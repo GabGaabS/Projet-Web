@@ -150,14 +150,6 @@ if (isset($_GET["auct"])) {
 
     <!-- Custom CSS -->
     <link href="css/productpage.css" rel="stylesheet">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-
-    <![endif]-->
     <script src="js/jquery.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
@@ -201,7 +193,7 @@ include('nav.php');
 
                     </div>
                     <hr>
-                    <div class="product-price">Current Bid
+                    <div class="product-price">Prix actuel
                         <br>$ <?php echo $data['current_bid']; ?>
                     </div>
                     <p class="product-stock" id="timeRem"></p>
@@ -363,8 +355,10 @@ include('nav.php');
 
 </div>
 </div>
-<div id="footer"></div>
 </body>
+<footer>
+    <div id="footer"></div>
+</footer>
 <script> 
 $(function(){$("#footer").load("footer.html"); });
 </script> 
