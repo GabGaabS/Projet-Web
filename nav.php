@@ -19,7 +19,7 @@ session_start();
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="listings.php">Omnes Marketplace</a>
+                        <a class="navbar-brand" href="indexc.php">Omnes Marketplace</a>
                     </div>
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -131,7 +131,7 @@ session_start();
     <section>
         <br>
         <center>
-        <p><font color=red size="10pt" face="impact" ></font> </p>
+        <p><font color=red size="5pt" face="impact" ></font></p>
         </center>
         </br>
     </section>

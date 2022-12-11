@@ -158,7 +158,7 @@ include 'nav.php';
         </label></td>
         <td>
           <select onchange="catsel(this)">
-          <!--<option value="-1">None</option>!-->
+            <option value="-1">Veuillez séléctionner une option</option>
             <option value="1" type_vente="1">Vente classique</option>
             <option value="2" type_vente="2">Vente par enchère</option>
             <option value="3" type_vente="3">Vente par négociation</option>
@@ -167,8 +167,8 @@ include 'nav.php';
       </tr>
       <tr>
         <td colspan="2">
-          <div id="1"> <!-- Vente immédiate -->
-            <table border="0"><tr><td>
+          <div id="1" style="display:none"> <!-- Vente immédiate -->
+            <table border="0" cellspacing="3" cellpadding="0"><tr><td>
         <!-- Start Price -->
         <div class="form-group">
             <label class="col-md-4 control-label" for="start-price">Prix</label>
@@ -195,13 +195,13 @@ include 'nav.php';
         </div></td></tr></table>
           </div>
           </div>
-          <div id="2">
-            <table border="0"><tr><td><!-- Item State -->
+          <div id="2" style="display:none"> <!-- Vente par enchère -->
+            <table border="0" cellspacing="3" cellpadding="0"><tr><td><!-- Item State -->
         <div class="form-group">
             <label class="col-md-4 control-label" for="item-state">Etat du produit</label>
             <div class="col-md-4">
                 <select id="item-state" name="item-state" class="form-control" required>
-                    <option value="" selected disabled hidden>Please Select a Condition</option>
+                    <option value="" selected disabled hidden>Etat du produit</option>
                     <?php
                     $sql = 'SELECT * FROM State';
                     foreach ($db->query($sql) as $row) { ?>
@@ -262,8 +262,8 @@ include 'nav.php';
             </div>
         </div></td></tr></table>
           </div>
-          <div id="3">
-            <table border="0"><tr><td><!-- Vente par négociation -->
+          <div id="3" style="display:none">
+            <table border="0" cellspacing="3" cellpadding="0"><tr><td><!-- Vente par négociation -->
         <!-- Start Price -->
         <div class="form-group">
             <label class="col-md-4 control-label" for="start-price">Prix initial</label>
