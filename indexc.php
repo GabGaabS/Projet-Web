@@ -107,7 +107,11 @@
                         <li class="fa fa-star"></li>
                         <li class="fa fa-star"></li>
                     </ul>
+<<<<<<< Updated upstream
                     <div class="price">$2777
+=======
+                    <div class="price">$2777.0
+>>>>>>> Stashed changes
                         <span>$3999.00</span>
                     </div>
                 </div>
