@@ -24,6 +24,12 @@ require("dbConnection.php");
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <script> $(function(){ $("#footer").load("footer.html"); });</script> 
+     <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -41,13 +47,15 @@ require("dbConnection.php");
     <header class="" style="background-color: #140e0e;background-image: url('./img/fdprojet1.jpg');opacity: 1;">
         <div class="masthead-content"></div>
         <center>
-        <h2 class="masthead-subheading mb-0" style="font-size: 40px;" >Site de vente réalisé par les étudiants de L'ECE</h2>
-        <h1 class="masthead-heading mb-0" style="font-size: 100px;">Omnes MarketPlace</h1>
+        <h2  style="font-size: 40px;" >Site de vente réalisé par les étudiants de L'ECE</h2>
+        <h1  style="font-size: 100px;">Omnes MarketPlace</h1>
         </center>
     </header><div class="shopping-grid">
     <div class="container">
-    <h2 class="text-center"><FONT color="black" face=impact ><b>Ventes flash<b><br> Des offres à ne pas rater!!!</FONT></h2>
+            <div class="intro">
+    <h2 class="text-center">Ventes flash</h2>
     <div class="row">
+    </div>
             <div class="product-grid7">
                 <?php
                 $sql = "SELECT A.current_bid, A.auction_id, I.item_picture, I.label, I.description, S.state 

@@ -217,18 +217,18 @@ else {
             <div class="thumbnail">
                 <img src="<?php echo $item['item_picture']; ?>" alt="Item image" style="width:250px; height:250px">
                 <div class="caption">
-                    <h4 class="pull-right">$ <?php echo $item['current_bid']; ?></h4>
+                    <h4 class="pull-right">€ <?php echo $item['current_bid']; ?></h4>
                     <h4><a href="productpage.php?auct=<?php echo $item['auction_id']; ?>"><?php echo $item['label']; ?> (<?php echo $item['state']; ?>)</a></h4>
                     <p><?php echo $item['description']; ?></p>
                 </div>
                 <div class="row viewings">
-                    <div class="col-md-6">Viewings: <?php echo $item['viewings']; ?></div>
+                    <div class="col-md-6">Nb de vues: <?php echo $item['viewings']; ?></div>
                     <div class="col-md-6 text-right">
                         <?php
                         $now = new DateTime();
                         $endDate = new DateTime($item['end_time']);
                         $interval = $endDate -> diff($now);
-                        echo $interval -> format('%a Days and %h Hours'); ?>
+                        echo $interval -> format('%a j et %h h'); ?>
                     </div>
                 </div>
             </div>

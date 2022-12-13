@@ -61,10 +61,10 @@ if (isset($_POST['submit'])) {
                 $mail->addAddress($user['email'], $user['first_name'] . ' ' . $user['last_name']);
 
                 //Set the subject line
-                $mail->Subject = 'You have been outbid on an auction!';
+                $mail->Subject = 'Quelqu\'un a mieux enchérie que vous!';
 
                 //Replace the plain text body with one created manually
-                $mail->Body = 'You just got outbid on the ' . $label . ' auction you were watching! The new bid is: ' . $newBid;
+                $mail->Body = 'Quelqu un a a mieux encherie sur ' . $label . '  Le nouveau prix est: ' . $newBid;
 
                 //send the message, check for errors
                 if (!$mail->send()) {
@@ -77,7 +77,7 @@ if (isset($_POST['submit'])) {
         }
         $message = '';
     } else if($newBid <= $currentBid) {
-        $message="New bid needs to be higher than the current bid";
+        $message="Le nouveau prixdoit être plus élevé que celui actuel";
     }
 }
 if (isset($_GET["auct"])) {
@@ -88,7 +88,7 @@ if (isset($_GET["auct"])) {
     $resp->execute();
 
     if ($resp->rowCount() == 0) {
-        echo "Auction does not exist";
+        echo "L'enchère n'existe pas";
     } else {
         $data = $resp->fetch();
         $resp->closeCursor();
@@ -143,7 +143,7 @@ if (isset($_GET["auct"])) {
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
-    <title>Produit</title>
+    <title>Produits</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -194,7 +194,7 @@ include('nav.php');
                     </div>
                     <hr>
                     <div class="product-price">Prix actuel
-                        <br>$ <?php echo $data['current_bid']; ?>
+                        <br><?php echo $data['current_bid']; ?> €
                     </div>
                     <p class="product-stock" id="timeRem"></p>
 
@@ -212,8 +212,7 @@ include('nav.php');
                                 <input hidden name="auction_id" value="<?php echo $data['auction_id']; ?>"/>
                                 <input hidden name="item_label" value="<?php echo $item_data['label']; ?>"/>
                                 <input type="number" step="0.01" id="bidInput" min="0" name="new_bid"/>
-                                <button id="submit" name="submit" class="btn btn-success">Submit Bid</button>
-                                <!--                            http://stackoverflow.com/questions/12230981/how-do-i-navigate-to-another-page-on-button-click-with-twitter-bootstrap-->
+                                <button id="submit" name="submit" class="btn btn-success">Enchérir</button>
                             </form>
                             <?php
                             if(!empty($message))
@@ -299,11 +298,11 @@ include('nav.php');
                             <tbody>
                             <tr>
                                 <td class="info">Prix de départ</td>
-                                <td><?php echo $data["start_price"] . "$"; ?></td>
+                                <td><?php echo $data["start_price"] . "€"; ?></td>
                             </tr>
                             <tr>
                                 <td class="info">Prix achat immédiat</td>
-                                <td><?php echo $data["reserve_price"] . "$"; ?></td>
+                                <td><?php echo $data["reserve_price"] . "€"; ?></td>
                             </tr>
                             <tr>
                                 <td class="info">Heure de départ</td>

@@ -1,9 +1,10 @@
 <?php
 
+header('Location: indexc.php?val=successdelivery');
+       
+
 if(isset($_POST['envoi'])){ // si formulaire soumis
-       header('Location: indexc.php?val=successdelivery');
        include('facturation.php');
-       exit();
 }
 
        $nomduclient = isset($_POST["nom-du-client"])? $_POST["nom-du-client"] : "";

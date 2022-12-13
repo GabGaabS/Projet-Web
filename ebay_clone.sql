@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : dim. 11 déc. 2022 à 21:55
+-- Généré le : mar. 13 déc. 2022 à 16:18
 -- Version du serveur : 8.0.27
 -- Version de PHP : 7.4.26
 
@@ -45,25 +45,26 @@ CREATE TABLE IF NOT EXISTS `auction` (
   KEY `Auction_Duration` (`duration_id`),
   KEY `Auction_Item` (`item_id`),
   KEY `Auction_Users` (`user_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb3;
+) ENGINE=MyISAM AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb3;
 
 --
 -- Déchargement des données de la table `auction`
 --
 
 INSERT INTO `auction` (`auction_id`, `start_price`, `reserve_price`, `current_bid`, `start_time`, `duration_id`, `end_time`, `viewings`, `win_confirmed`, `item_id`, `user_id`, `type`) VALUES
-(1, '10.00', '90.00', '91.00', '2022-11-19 15:02:42', 5, '2022-11-19 15:32:47', 11, 1, 1, 1, 1),
-(2, '2.00', '10.00', '2.00', '2022-11-21 13:28:22', 5, '2022-11-24 13:28:22', 8, 0, 2, 1, 1),
-(3, '20.00', '500.00', '25.00', '2022-11-21 13:30:07', 5, '2022-11-26 13:30:07', 6, 0, 3, 1, 1),
-(4, '25.00', '600.00', '25.00', '2022-11-21 13:31:12', 5, '2022-11-26 13:31:12', 3, 0, 4, 1, 1),
-(6, '400000.00', '450000.00', '400000.00', '2022-12-03 16:05:05', 5, '2022-12-13 16:05:05', 13, 0, 6, 1, 1),
-(7, '80.00', '250.00', '80.00', '2022-12-03 16:06:15', 5, '2022-12-13 16:06:15', 4, 0, 7, 1, 1),
-(8, '10.00', '15.00', '10.00', '2022-12-03 16:07:15', 5, '2022-12-13 16:07:15', 0, 0, 8, 1, 1),
-(9, '250.00', '300.00', '250.00', '2022-12-03 16:09:26', 5, '2022-12-13 16:09:26', 2, 0, 9, 1, 1),
-(10, '135.00', '150.00', '135.00', '2022-12-03 16:12:36', 5, '2022-12-13 16:12:36', 0, 0, 10, 1, 1),
-(11, '2549.00', '2570.00', '2549.00', '2022-12-03 16:18:56', 5, '2022-12-13 16:18:56', 2, 0, 11, 1, 1),
-(12, '80.00', '90.00', '80.00', '2022-12-03 16:23:23', 5, '2022-12-13 16:23:23', 0, 0, 12, 1, 1),
-(13, '11850.00', '12000.00', '11850.00', '2022-12-03 16:28:00', 5, '2022-12-13 16:28:00', 0, 0, 13, 1, 1);
+(26, '15.00', '30.00', '15.00', '2022-12-13 15:27:08', 5, '2022-12-23 15:27:08', 3, 0, 29, 1, 1),
+(25, '30.00', '50.00', '30.00', '2022-12-13 15:25:38', 5, '2022-12-23 15:25:38', 0, 0, 28, 1, 1),
+(24, '4.00', '7.00', '4.00', '2022-12-13 15:17:25', 5, '2022-12-23 15:17:25', 1, 0, 27, 1, 1),
+(23, '5.00', '12.00', '5.00', '2022-12-13 15:16:04', 5, '2022-12-23 15:16:04', 1, 0, 26, 1, 1),
+(22, '60.00', '85.00', '60.00', '2022-12-13 15:14:29', 5, '2022-12-23 15:14:29', 5, 0, 25, 1, 1),
+(21, '6.00', '10.00', '6.00', '2022-12-13 15:11:50', 5, '2022-12-23 15:11:50', 0, 0, 24, 1, 1),
+(20, '10.00', '20.00', '10.00', '2022-12-13 15:10:20', 5, '2022-12-23 15:10:20', 4, 0, 23, 1, 1),
+(19, '42.00', '50.00', '42.00', '2022-12-13 15:09:25', 5, '2022-12-23 15:09:25', 1, 0, 22, 1, 1),
+(18, '80.00', '120.00', '80.00', '2022-12-13 15:07:27', 5, '2022-12-23 15:07:27', 0, 0, 21, 1, 1),
+(17, '206000.00', '215000.00', '206000.00', '2022-12-13 15:05:41', 5, '2022-12-23 15:05:41', 0, 0, 20, 1, 1),
+(16, '950.00', '1080.00', '950.00', '2022-12-13 14:54:53', 5, '2022-12-23 14:54:53', 1, 0, 19, 1, 1),
+(15, '35000.00', '45000.00', '35000.00', '2022-12-13 14:53:30', 5, '2022-12-23 14:53:30', 9, 0, 18, 1, 1),
+(14, '10.00', '15.00', '13.00', '2022-12-13 14:51:10', 5, '2022-12-23 14:51:10', 5, 0, 17, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -81,7 +82,7 @@ CREATE TABLE IF NOT EXISTS `bids` (
   PRIMARY KEY (`bid_id`),
   KEY `Auction_Bids` (`auction_id`),
   KEY `Users_Bids` (`user_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3;
 
 --
 -- Déchargement des données de la table `bids`
@@ -92,7 +93,8 @@ INSERT INTO `bids` (`bid_id`, `user_id`, `auction_id`, `bid_price`, `bid_time`) 
 (2, 2, 1, '80.00', '2022-11-19 15:08:55'),
 (3, 2, 1, '90.00', '2022-11-19 15:20:06'),
 (4, 2, 1, '91.00', '2022-11-19 15:32:25'),
-(5, 2, 3, '25.00', '2022-11-21 16:37:26');
+(5, 2, 3, '25.00', '2022-11-21 16:37:26'),
+(6, 2, 14, '13.00', '2022-12-13 16:18:03');
 
 -- --------------------------------------------------------
 
@@ -181,22 +183,26 @@ CREATE TABLE IF NOT EXISTS `item` (
   PRIMARY KEY (`item_id`),
   KEY `Category_Item` (`category_id`),
   KEY `Item_condition_id` (`state_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb3;
+) ENGINE=MyISAM AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb3;
 
 --
 -- Déchargement des données de la table `item`
 --
 
 INSERT INTO `item` (`item_id`, `item_picture`, `label`, `description`, `state_id`, `category_id`) VALUES
-(3, 'uploads/item/112122-131107_TIPE-3 1.jpg', 'C\'est claire comme Claire', 'Livre nul', 1, 4),
-(4, 'uploads/item/112122-131112_TIPE-2.jpg', 'Guillaume et ses amis', 'Le jeu trop trop mauvais quoi', 4, 31),
-(6, 'uploads/item/120322-161205_ferrari.jpg', 'Ferrari SP48 Unica', 'Belle voiture italienne, le 0 à 100 en 2.3s', 1, 7),
-(7, 'uploads/item/120322-161215_theweeknd concert.jpeg', 'The Weeknd concert', 'Un concert de qualité d\'un artiste mondialement connu (The Weeknd)', 1, 15),
-(8, 'uploads/item/120322-161215_one piece.jpg', 'One piece dernier tome', 'Le dernier tome de one piece', 1, 4),
-(10, 'uploads/item/120322-161236_nike air force1.jpg', 'Nike air force 1 ', 'Une paire de chaussure agréable et portable à n\'importe quel moment', 1, 8),
-(11, 'uploads/item/120322-161256_pcgamer.jpg', 'PC de gaming Intel Core i7', 'Processeur : Intel Core i7-13700KF, 8x 3.40GHz + 8x 2.50GHz\r\ncarte mère : ASUS Prime Z690-A DDR5, S. 1700\r\nCarte Graphique : NVIDIA GeForce RTX 3070 Ti 8Go\r\nSystème d\'Exploitation : Windows 11 Home\r\nRAM : 16Go DDR5-6000 | ADATA XPG Lancer RGB\r\n', 1, 5),
-(12, 'uploads/item/120322-161223_filet copaya.jpg', 'Filet de volley Copaya', 'Un filet de beach-volley qualitatif. Le sac est composÃ© du filet, des poteaux, des lignes et de tendeurs.', 1, 27),
-(13, 'uploads/item/120322-161200_montre rolex.jpg', 'Montre DATEJUST 36 Rolex', 'Belle montre ROLEX ', 1, 20);
+(17, 'uploads/item/121322-141210_71zfiinJ7sL._SL1117_.jpg', 'Slipknot - IOWA', '9 Men, 9 Masks, Maximum insanity with NO safety net! AWESOME artwork to boot!!!', 1, 22),
+(18, 'uploads/item/121322-141230_montre rolex.jpg', 'Rolex', 'Montre trop cher pour rien', 1, 20),
+(19, 'uploads/item/121322-141253_120322-161233_pcgamer.jpg', 'PC Gamer', 'PC de jeu:\r\nAMD Ryzen 5 3600 6x 4,2 GHz\r\n16 Go de mémoire RAM DDR4 PC-3000\r\nNvidia GeForce RTX3060 12 Go\r\nDisque dur SSD NVME M.2 de 500 Go\r\nWindows 10 Professionnel\r\n7.1 Son / LAN Gigabit', 1, 11),
+(20, 'uploads/item/121322-151241_120322-161205_ferrari.jpg', 'Ferrari SP48 Unica', 'Voiture pas cher du tout', 2, 7),
+(21, 'uploads/item/121322-151227_120322-161215_theweeknd concert.jpeg', 'Concert de TheWeeknd', 'Concert de l\'artiste mondialement connu à Paris', 1, 15),
+(22, 'uploads/item/121322-151225_81xiXPG6YgL._SX425_.jpg', 'The End, So Far', 'The End, So Far Vinyle ', 2, 22),
+(23, 'uploads/item/121322-151220_71LCcXgubpL._AC_SX425_.jpg', 'KALINCO Montre Connectée', '【Moniteur de la Santé】Faire toujours attention à votre santé physique et mentale, le capteur de mouvement haute performance intégré surveille et détecte automatiquement votre fréquence cardiaque en temps réel, pression artérielle, l\'oxygène sanguin et vot', 3, 20),
+(24, 'uploads/item/121322-151250_51-1xJGYBYL._AC_SX679_.jpg', 'Anigaduo 25W USB C', 'Compatibilité Universelle : USBC chargeur avec câble de 2 m pour iPhone 14/14 Plus/14 Pro/14 Pro Max/13/13 Mini/13 Pro/13 Pro Max/12/12 Mini/12 Pro/12 Pro Max 11 SE 2022/2020, XR, XS, XS MAX, 8, 8 Plus, Pad Pro, Airpods Pro.\r\nSafety: 25W USB C Chargeur se', 1, 11),
+(25, 'uploads/item/121322-151229_71DGPi4MOdL._AC_SX425_.jpg', 'Govee Barre LED Smart', 'Nouveau Plaisir Visuel : Les barres lumineuses peuvent être facilement synchronisées avec les couleurs et les sons de votre écran de télévision. Vos expériences de jeu, de cinéma et de musique seront améliorées avec un éclairage vibrant, 16 millions de co', 1, 11),
+(26, 'uploads/item/121322-151204_91625EDAA7L._AC_SY445_.jpg', 'Black Widow', 'Black Widow, 1 Blu-ray, 133 minutes\r\n\r\nSynopsis\r\nNatasha Romanoff, alias Black Widow, voit resurgir la part la plus sombre de son passé pour faire face à une redoutable conspiration liée à sa vie d\'autrefois. Poursuivie par une force qui ne reculera devan', 3, 14),
+(27, 'uploads/item/121322-151225_61iYFNhtwHL._AC_SX679_.jpg', ' Verre Trempé pour iPhone 11', 'Pack de 2 Verre Trempé iPhone 11, iPhone XR, Très grande dureté: résiste aux égratignures jusqu\'à 9H (plus dur qu\'un couteau). Haute-réponse et une grande transparence.\r\n⚠ NON COMPATIBLE: iPhone 11 Pro, 11 Pro Max, iPhone X, XS, XS Max\r\nOléophobe: il a un', 2, 21),
+(28, 'uploads/item/121322-151238_51odlNdMNyL._AC_SX425_.jpg', 'Tefal Emotion Poêle 28 cm', 'SAISIE PARFAITE : poêle inox non revêtue pour de délicieuses viandes et légumes saisis, idéale pour déglacer et réaliser de savoureux jus et sauces\r\nGARANTIE 10 ANS : poêle de qualité supérieure, de conception sûre et robuste, sans risque de détérioration', 2, 25),
+(29, 'uploads/item/121322-151208_s-l500.jpg', 'ANCIENNE LAMPE INDUSTRIELLE ARTICULÉE VINTAGE', 'ANCIENNE LAMPE INDUSTRIELLE ARTICULÉ VINTAGE \r\nETAT OCCASION VOIR LES PHOTOS \r\nCOLIS MONDIAL RELAY ', 5, 5);
 
 -- --------------------------------------------------------
 
@@ -317,7 +323,8 @@ CREATE TABLE IF NOT EXISTS `watch` (
 --
 
 INSERT INTO `watch` (`user_id`, `auction_id`) VALUES
-(2, 1);
+(2, 1),
+(2, 14);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
