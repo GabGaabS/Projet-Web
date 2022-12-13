@@ -79,7 +79,7 @@ require("dbConnection.php");
         <div class="container">
             <div class="intro">
                 <h2 class="text-center">Où sommes-nous ?</h2>
-                <p class="text-center">Retrouvez notre shop directement à Paris</p>
+                <p class="text-center">Retrouvez notre shop directement à l'adresse:<br>Immeuble POLLUX37,<br> Quai de Grenelle<br>75015 Paris<br>Tel : 01 44 39 06 00<br>Email :  OmnesMarketPlace@edu.ece.fr</p>
             </div>
         </div>
         <center>
