@@ -46,7 +46,7 @@ require("dbConnection.php");
         </center>
     </header><div class="shopping-grid">
     <div class="container">
-    <h2 class="text-center">Ventes flash</h2>
+    <h2 class="text-center"><FONT color="red" face=impact ><b>Ventes flash<b><br> Des offres à ne pas rater!!!</FONT></h2>
     <div class="row">
             <div class="product-grid7">
                 <?php
