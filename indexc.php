@@ -40,8 +40,10 @@ require("dbConnection.php");
     ?>
     <header class="" style="background-color: #140e0e;background-image: url('./img/fdprojet1.jpg');opacity: 1;">
         <div class="masthead-content"></div>
+        <center>
         <h2 class="masthead-subheading mb-0" style="font-size: 40px;" >Site de vente réalisé par les étudiants de L'ECE</h2>
         <h1 class="masthead-heading mb-0" style="font-size: 100px;">Omnes MarketPlace</h1>
+        </center>
     </header><div class="shopping-grid">
     <div class="container">
     <h2 class="text-center">Ventes flash</h2>
